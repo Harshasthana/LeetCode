@@ -1,0 +1,19 @@
+class Solution:
+    def isValidSudoku(self, board: List[List[str]]) -> bool:
+        row,col,block=set(),set(),set()
+        for i in range(9):
+            for j in range(9):
+                if(board[i][j]!="."):
+                    r_k=(i,board[i][j])
+                    c_k=(j,board[i][j])
+                    b_k=(i//3,j//3,board[i][j])
+                    print(r_k , c_k , b_k)
+                    if(r_k in row or c_k in col or b_k in block):
+                        return False
+                    else:
+                        row.add(r_k)
+                        col.add(c_k)
+                        block.add(b_k)
+            
+        return True
+        
