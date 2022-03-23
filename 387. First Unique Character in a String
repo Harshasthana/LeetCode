@@ -1,0 +1,13 @@
+from collections import Counter
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        t1=Counter(ransomNote)
+        t2=Counter(magazine)
+        l1=list(t1)
+        l2=list(t2)
+        # print(t1)
+        # print(t2)
+        for i in t1:
+            if(t1[i]>t2[i]):
+                return False
+        return True
