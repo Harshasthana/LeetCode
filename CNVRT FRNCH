@@ -1,4 +1,4 @@
-import pandas as pd
-df = pd.read_csv('french_dictionary.csv', header=None, index_col=0, squeeze = True)
-d = df.to_dict()
-print(d)   
+fileobj=open("find_words.txt")
+lst=fileobj.readlines()
+lst=[lst.strip() for lst in lst]
+print(lst)
